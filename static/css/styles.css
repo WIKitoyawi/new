@@ -1,12 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Iowan+Old+Style:wght@400;600;700&display=swap');
 /* General Styles */
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: #714C8D;
     color: #333;
 }
 
+h1{
+    color: white;
+}
 .container {
     width: 100%;
     margin: 0 auto;
@@ -68,14 +73,17 @@ body {
 }
 
 .logo-img {
-    height: 30px;
+    width: 45px;
+    height: 40px;
     margin-right: 10px;
 }
 
 .logo-text {
-    font-size: 20px;
-    font-weight: bold;
-    color: #6a1b9a;
+    font-size: 33px;
+    line-height: 45px;
+    font-weight: 700;
+    color: #714C8D;
+    font-family: 'Iowan Old Style', serif;
 }
 .user-profile {
     display: flex;
@@ -305,20 +313,19 @@ body {
 }
 
 .search-box input::placeholder {
-    color: #aaa; /* Плейсхолдер будет светло-серым */
+    color: #aaa; 
 }
 
 .search-icon {
     cursor: pointer;
     font-size: 18px;
-    color: #6a1b9a; /* Фиолетовая иконка */
+    color: #6a1b9a; 
     margin-right: 10px;
     display: flex;
     align-items: center;
 }
 
 
-/* Иконка поиска */
 .search-icon {
     background: none;
     border: none;
@@ -328,7 +335,6 @@ body {
     color: #666;
 }
 
-/* Меню-иконка */
 .menu-icon {
     background: none;
     border: none;
@@ -347,44 +353,66 @@ body {
     background-color: #6a1b9a;
     border-radius: 2px;
 }
-/* Сетка карточек */
+
 .campaign-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    align-items: start;
 }
 
-/* Карточка */
 .campaign-card {
     background-color: #fff;
     color: #333;
     border-radius: 10px;
+    border: 1px solid #ddd;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     transition: transform 0.3s;
+    width: 100%;
+    max-width: 395px;
+    margin: 10px; 
+    height: 515px;
 }
 
 .campaign-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border-color: #888; /* Затемняем границу при наведении */
 }
+
 
 .campaign-card img {
     width: 100%;
-    height: 200px;
+    height: 300px;
     object-fit: cover;
+    display: block;
 }
 
-/* Контент карточки */
 .campaign-content {
-    padding: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .campaign-content h2 {
     font-size: 18px;
-    margin-bottom: 10px;
+    margin: 5px 0;
+}
+.campaign-content p {
+    font-size: 14px;
+    margin: 4px 0;
+}
+.campaign-stats {
+    text-align: left;
+    width: 100%;
+    font-size: 14px;
+    margin: 6px 0;
 }
 
 /* Прогресс-бар */
@@ -392,9 +420,8 @@ body {
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     height: 10px;
-    overflow: hidden;
-    margin: 10px 0;
-    width: 350px;
+    width: 100%;
+    margin: 6px 0;
 }
 
 .progress-bar .progress {
@@ -404,29 +431,23 @@ body {
     transition: width 0.5s ease;
 }
 
-/* Статистика */
-.campaign-stats {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-/* Кнопка */
 .btn {
     background-color: #ff9800;
-    color: #fff;
-    padding: 10px 15px;
+    color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+    margin-top: 8px;
 }
 
 .btn:hover {
     background-color: #e68a00;
 }
+
+
 .container_l{
     max-width: 1200px;
     margin: 0 auto;
@@ -514,13 +535,7 @@ body {
     margin-bottom: 20px;
 }
 
-.progress-bar {
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    height: 10px;
-    margin: 20px 0;
-    overflow: hidden;
-}
+
 
 .progress-bar div {
     height: 100%;
@@ -774,42 +789,6 @@ form button:hover {
     color: #6a1b9a;
 }
 
-.campaign-card {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 15px;
-    background-color: #f9f9f9;
-}
-
-.campaign-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-.campaign-content {
-    flex: 1;
-}
-
-.progress-bar {
-    width: 100%;
-    background-color: #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-    height: 10px;
-    margin: 10px 0;
-}
-
-.progress-bar div {
-    height: 100%;
-    background-color: #6a1b9a;
-    transition: width 0.3s ease;
-}
 
 
 /* 🔹 Блок всех волонтёрских акций */
